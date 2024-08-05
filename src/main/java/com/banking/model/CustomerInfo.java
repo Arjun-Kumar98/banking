@@ -16,5 +16,5 @@ private String accountId;
 private String customerName;
 private LocalDateTime createdOn;
 private LocalDateTime updatedOn;
-private char activeInd;
+private Integer activeInd;
 }

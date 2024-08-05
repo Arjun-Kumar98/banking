@@ -16,18 +16,17 @@ import java.time.LocalDateTime;
 
 public class RetailerInfoEntity {
     @Id
-    //@GeneratedValue
-    @Column(name="Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column(name="retailer_Name")
     private String retailerName;
     @Column(name="account_Id")
     private String accountId;
     @Column(name="active_Ind")
-    private char activeInd;
-    @Column(name="created_on")
+    private Integer activeInd;
+    @Column(name="created_On")
     private LocalDateTime createdOn;
-    @Column(name="updated_on")
+    @Column(name="updated_On")
     private LocalDateTime updatedOn;
 
 }

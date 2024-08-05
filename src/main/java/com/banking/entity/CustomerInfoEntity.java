@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 
 public class CustomerInfoEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column(name = "account_Id")
     private String accountId;
@@ -26,7 +27,7 @@ public class CustomerInfoEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdOn;
     @Column(name = "active_Ind")
-    private char activeInd;
+    private Integer activeInd;
     @Column(name="customer_Name")
     private String customerName;
     @Column(name = "updated_On")

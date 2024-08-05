@@ -25,9 +25,9 @@ public class BankInfoEntity {
     private String bankName;
     @Column(name="ifsc_Code")
     private String ifscCode;
-    @Column(name="created_on")
+    @Column(name="created_On")
     private LocalDateTime createdOn;
-    @Column(name="updated_on")
+    @Column(name="updated_On")
     private LocalDateTime updatedOn;
     @Column(name="active_Ind")
     private Integer activeInd;
