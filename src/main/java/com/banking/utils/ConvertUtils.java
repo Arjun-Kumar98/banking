@@ -23,7 +23,7 @@ public static BankInfoEntity convert(BankInfo bankInfo) {
     bankInfoEntity.setIfscCode(bankInfo.getIfscCode());
     bankInfoEntity.setUpdatedOn(bankInfo.getUpdatedOn());
     bankInfoEntity.setCreatedOn(bankInfo.getCreatedOn());
-    //bankInfoEntity.setActiveInd(bankInfoEntity.isActiveInd( ));
+    bankInfoEntity.setActiveInd(bankInfo.isActiveInd( ));
     return bankInfoEntity;
 }
 
@@ -34,7 +34,7 @@ public static BankInfo convert(BankInfoEntity bankInfoEntity) {
    bankInfo.setIfscCode(bankInfoEntity.getIfscCode( ));
    bankInfo.setUpdatedOn(bankInfoEntity.getUpdatedOn( ));
    bankInfo.setCreatedOn(bankInfoEntity.getCreatedOn( ));
-   //bankInfo.setActiveInd(bankInfoEntity.isActiveInd());
+   bankInfo.setActiveInd(bankInfoEntity.isActiveInd());
     return bankInfo;
 }
 
@@ -46,7 +46,7 @@ public static CustomerInfoEntity  convert( CustomerInfo customerInfo) {
     customerInfoEntity.setAccountId(customerInfo.getAccountId());
     customerInfoEntity.setUpdatedOn(customerInfo.getUpdatedOn());
     customerInfoEntity.setCreatedOn(customerInfo.getCreatedOn());
-    customerInfoEntity.setActiveInd(customerInfo.getActiveInd());
+    customerInfoEntity.setActiveInd(customerInfo.isActiveInd());
 
     return customerInfoEntity;
 
@@ -58,7 +58,7 @@ public static CustomerInfo convert(CustomerInfoEntity customerInfoEntity) {
     customerInfo.setCustomerName(customerInfoEntity.getCustomerName( ));
     customerInfo.setUpdatedOn(customerInfoEntity.getUpdatedOn());
     customerInfo.setCreatedOn(customerInfoEntity.getCreatedOn());
-    customerInfo.setActiveInd(customerInfoEntity.getActiveInd( ));
+    customerInfo.setActiveInd(customerInfoEntity.isActiveInd( ));
     //customerInfo.setActiveInd(customerInfoEntity.getActiveInd( ));
     return customerInfo;
 
@@ -70,7 +70,7 @@ public static RetailerInfoEntity convert( RetailerInfo retailerInfo) {
    retailerInfoEntity.setRetailerName(retailerInfo.getRetailerName( ));
    retailerInfoEntity.setCreatedOn(retailerInfo.getCreatedOn( ));
    retailerInfoEntity.setUpdatedOn(retailerInfo.getUpdatedOn( ));
-   //retailerInfoEntity.setActiveInd(retailerInfo.isActiveInd( ));
+   retailerInfoEntity.setActiveInd(retailerInfo.isActiveInd( ));
    return retailerInfoEntity;
 }
 public static RetailerInfo convert(RetailerInfoEntity retailerInfoEntity) {
@@ -80,7 +80,7 @@ public static RetailerInfo convert(RetailerInfoEntity retailerInfoEntity) {
     retailerInfo.setRetailerName(retailerInfoEntity.getRetailerName( ));
     retailerInfo.setCreatedOn(retailerInfoEntity.getCreatedOn( ));
     retailerInfo.setUpdatedOn(retailerInfoEntity.getUpdatedOn( ));
-    //retailerInfo.setActiveInd(retailerInfoEntity.isActiveInd( ));
+    retailerInfo.setActiveInd(retailerInfoEntity.isActiveInd( ));
     return retailerInfo;
 }
 

@@ -8,5 +8,5 @@ import java.util.Optional;
 import java.util.List;
 
 public interface BankInfoRepository extends JpaRepository<BankInfoEntity, Long> {
-//List<BankInfoEntity> findByActiveIndTrue();
+List<BankInfoEntity> findByActiveIndIsTrue();
 }

@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: kumar1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/finance?serverTimezone=America/Chicago
+    username: dummy
+    password: Dummy@123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: DEBUG
+        transaction:
+          interceptor:
+            TransactionInterceptor: TRACE
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+  pattern:
+    level: "%5p [trace=%X{traceId}, span=%X{spanId}] %c - %m%n"
+
+
+  config:
+    classpath: splunk_log.xml
+

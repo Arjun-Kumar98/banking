@@ -30,5 +30,5 @@ public class BankInfoEntity {
     @Column(name="updated_On")
     private LocalDateTime updatedOn;
     @Column(name="active_Ind")
-    private Integer activeInd;
+    private boolean activeInd;
 }

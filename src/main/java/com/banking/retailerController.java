@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @EnableTransactionManagement
 
@@ -26,5 +29,12 @@ public class retailerController {
     public ResponseEntity saveRetailerDetails(@RequestBody RetailerInfo retailerInfo) {
         retailerService.saveRetailerDetails(retailerInfo);
         return ResponseEntity.ok(retailerInfo);
+    }
+
+    @GetMapping("/getRetailerDetails")
+    @CrossOrigin(origins="http://localhost:4200")
+    public List<Map<String,Object>> getRetailerDetails() {
+        return retailerService.getRetailerDetails();
+
     }
  }

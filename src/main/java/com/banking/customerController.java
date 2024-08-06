@@ -25,9 +25,14 @@ public class customerController {
 
     @PostMapping("/saveCustomerdetails")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity<CustomerInfo> addCustomer(@RequestBody CustomerInfo customerInfo) {
-        logger.info("the value is == {}", customerInfo);
-        customerService.saveCustomerDetails(customerInfo);
-        return ResponseEntity.ok(customerInfo);
+    public ResponseEntity<CustomerInfo> addCustomer(@RequestBody CustomerInfo customerInfo) throws Exception {
+
+        String traceId ="12345";
+        logger.info("inside addCustomer in customer {}", customerInfo);
+
+        CustomerInfo customerInfo1 = customerService.saveCustomerDetails(customerInfo);
+
+        logger.info("return  addCustomer in customer {} traceId : {}", customerInfo1, traceId);
+        return ResponseEntity.ok(customerInfo1);
     }
 }

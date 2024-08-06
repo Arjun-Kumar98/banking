@@ -27,7 +27,7 @@ public class CustomerInfoEntity {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdOn;
     @Column(name = "active_Ind")
-    private Integer activeInd;
+    private boolean activeInd;
     @Column(name="customer_Name")
     private String customerName;
     @Column(name = "updated_On")

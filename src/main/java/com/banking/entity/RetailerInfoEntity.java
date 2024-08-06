@@ -23,7 +23,7 @@ public class RetailerInfoEntity {
     @Column(name="account_Id")
     private String accountId;
     @Column(name="active_Ind")
-    private Integer activeInd;
+    private boolean activeInd;
     @Column(name="created_On")
     private LocalDateTime createdOn;
     @Column(name="updated_On")

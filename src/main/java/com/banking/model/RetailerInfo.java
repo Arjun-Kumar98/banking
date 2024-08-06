@@ -15,7 +15,7 @@ public class RetailerInfo {
     private Long Id;
     private String accountId;
     private String retailerName;
-    private Integer activeInd;
+    private boolean activeInd;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
 

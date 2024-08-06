@@ -17,5 +17,5 @@ public class BankInfo {
     private String ifscCode;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
-    private Integer activeInd;
+    private boolean activeInd;
 }

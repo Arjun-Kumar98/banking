@@ -31,17 +31,18 @@ public class BankingService {
        return ResponseEntity.ok().body(savedBankInfoEntity);
    }
 
-//   public List<Map<String,Object>> getBankDetails() {
-//       List<BankInfoEntity> bankdetails = bankInfoRepository.findByActiveIndTrue();
-//      // BankInfo bankInfo = ConvertUtils.convert(bankdetails.get(0));
-//       return bankdetails.stream().map(bank -> {
-//           Map<String,Object> map = new HashMap<>();
-//           map.put("id",bank.getId());
-//           map.put("name",bank.getBankName());
-//           return map;
-//       }).collect(Collectors.toList());
-//
-//   }
+   public List<Map<String,Object>> getBankDetails() {
+       List<BankInfoEntity> bankdetails = bankInfoRepository.findByActiveIndIsTrue();
+       logger.info("The bank details are {}",bankdetails);
+      // BankInfo bankInfo = ConvertUtils.convert(bankdetails.get(0));
+       return bankdetails.stream().map(bank -> {
+           Map<String,Object> map = new HashMap<>();
+           map.put("id",bank.getId());
+           map.put("name",bank.getBankName());
+           return map;
+       }).collect(Collectors.toList());
+
+   }
    //public BankingAcknowledgement saveCustomerdetails(BankingRequest bankingRequest) {
 
    }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<appender name="SPLUNK" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+<url>https://localhost:8088</url>
+<token>eyJraWQiOiJzcGx1bmsuc2VjcmV0IiwiYWxnIjoiSFM1MTIiLCJ2ZXIiOiJ2MiIsInR0eXAiOiJzdGF0aWMifQ.eyJpc3MiOiJhZG1pbiBmcm9tIGFyanVuLWt1bWFyLURlbGwtRzE1LTU1MTEiLCJzdWIiOiJhZG1pbiIsImF1ZCI6InB1YmxpYyIsImlkcCI6IlNwbHVuayIsImp0aSI6IjBkNGQ3MDA3MDY1NTQ5NTY1YjdkM2MzNTNhMjc4NWZiZmIyMjM1M2E4ODAxYzU4ZWQwOTUyMmM0M2Q1MWNkNDYiLCJpYXQiOjE3MjI5MDg4NzEsImV4cCI6MTcyNTUwMDg3MSwibmJyIjoxNzIyOTA4ODcxfQ.cGBbVhhxDOmzB8Al22YwqKh5uWsiL_JzTSpW-u92eaXYGI3i_FzL3ebvXLaMTBB6gXPO1uZkGtsPkl51KbpkNw</token>
+<source>kumar1</source>
+<sourcetype>_json</sourcetype>
+<host>localhost</host>
+<index>kumar1</index>
+</appender>
+
+<root level="INFO">
+<appender-ref ref="SPLUNK" />
+</root>
+
+</configuration>

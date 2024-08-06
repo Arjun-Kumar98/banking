@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-//@EnableTransactionManagement
+@EnableTransactionManagement
 public class bankController {
 //
     @Autowired
@@ -30,11 +30,11 @@ public class bankController {
     }
 //
 //
-//    @GetMapping("/getBankDetails")
-//    @CrossOrigin(origins="http://localhost:4200")
-//    public List<Map<String, Object>> getBankDetails() {
-//        return bankingService.getBankDetails();
-//    }
+    @GetMapping("/getBankDetails")
+    @CrossOrigin(origins="http://localhost:4200")
+    public List<Map<String, Object>> getBankDetails() {
+        return bankingService.getBankDetails();
+    }
 
   //  @GetMapping("/info")
    // public String hello() {
