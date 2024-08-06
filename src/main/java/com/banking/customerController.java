@@ -27,7 +27,7 @@ public class customerController {
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<CustomerInfo> addCustomer(@RequestBody CustomerInfo customerInfo) throws Exception {
 
-        String traceId ="12345";
+        String traceId ="12347";
         logger.info("inside addCustomer in customer {}", customerInfo);
 
         CustomerInfo customerInfo1 = customerService.saveCustomerDetails(customerInfo);
