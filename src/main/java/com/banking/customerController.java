@@ -15,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @EnableTransactionManagement
 public class customerController {
@@ -34,5 +37,12 @@ public class customerController {
 
         logger.info("return  addCustomer in customer {} traceId : {}", customerInfo1, traceId);
         return ResponseEntity.ok(customerInfo1);
+    }
+
+    @GetMapping("/getCustomerDetails")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<Map<String,Object>> getCustomerDetails() {
+        return customerService.getAllCustomerInfo();
+
     }
 }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -31,4 +32,7 @@ public class BankInfoEntity {
     private LocalDateTime updatedOn;
     @Column(name="active_Ind")
     private boolean activeInd;
+
+    @OneToMany(mappedBy = "bankInfoEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<LoanInfoEntity> loanInfoEntityList;
 }
