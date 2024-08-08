@@ -41,7 +41,7 @@ public class customerController {
 
     @GetMapping("/getCustomerDetails")
     @CrossOrigin(origins = "http://localhost:4200")
-    public List<Map<String,Object>> getCustomerDetails() {
+    public List<CustomerInfo> getCustomerDetails() {
         return customerService.getAllCustomerInfo();
 
     }

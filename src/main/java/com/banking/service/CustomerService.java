@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,14 +49,13 @@ public class CustomerService {
         return retCustomerInfo;
     }
 
-      public List<Map<String,Object>> getAllCustomerInfo(){
+      public List<CustomerInfo> getAllCustomerInfo(){
         List<CustomerInfoEntity> customerInfoEntityList = customerInfoRepository.findAll();
-        return customerInfoEntityList.stream().map(cust->{
-            Map<String,Object> map = new HashMap<>();
-            map.put("id",cust.getId());
-            map.put("accountNum",cust.getAccountId());
-            return map;
-        }).collect(Collectors.toList());
+        List<CustomerInfo> customerInfoList = new ArrayList<>();
+        for(CustomerInfoEntity customerInfoEntity : customerInfoEntityList){
+            customerInfoList.add(ConvertUtils.convert(customerInfoEntity));
+        }
+        return customerInfoList;
       }
 
 }

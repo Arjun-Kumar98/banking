@@ -10,10 +10,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -31,17 +28,14 @@ public class BankingService {
        return ResponseEntity.ok().body(savedBankInfoEntity);
    }
 
-   public List<Map<String,Object>> getBankDetails() {
+   public List<BankInfo> getBankDetails() {
        List<BankInfoEntity> bankdetails = bankInfoRepository.findByActiveIndIsTrue();
-       logger.info("The bank details are {}",bankdetails);
-      // BankInfo bankInfo = ConvertUtils.convert(bankdetails.get(0));
-       return bankdetails.stream().map(bank -> {
-           Map<String,Object> map = new HashMap<>();
-           map.put("id",bank.getId());
-           map.put("name",bank.getBankName());
-           return map;
-       }).collect(Collectors.toList());
+       List<BankInfo> bankInfoList = new ArrayList<>();
+       for(BankInfoEntity bankInfoEntity : bankdetails) {
+           bankInfoList.add(ConvertUtils.convert(bankInfoEntity));
+       }
 
+   return bankInfoList;
    }
    //public BankingAcknowledgement saveCustomerdetails(BankingRequest bankingRequest) {
 

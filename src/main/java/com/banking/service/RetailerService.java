@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -30,14 +27,13 @@ public class RetailerService {
          saveRetailerInfoEntity = retailerInfoRepository.save(saveRetailerInfoEntity);
          return ResponseEntity.ok().body(saveRetailerInfoEntity);
      }
-     public List<Map<String, Object>> getRetailerDetails() {
+     public List<RetailerInfo> getRetailerDetails() {
          List<RetailerInfoEntity> retailerInfoEntityList = retailerInfoRepository.findByActiveIndIsTrue();
-         return retailerInfoEntityList.stream().map(retailer->{
-             Map<String, Object> map = new HashMap<>();
-             map.put("id", retailer.getId());
-             map.put("name",retailer.getRetailerName());
-             return map;
-         }).collect(Collectors.toList( ));
+         List<RetailerInfo> retailerInfoList = new ArrayList<>();
+         for(RetailerInfoEntity retailerInfoEntity : retailerInfoEntityList) {
+             retailerInfoList.add(ConvertUtils.convert(retailerInfoEntity));
+         }
+         return retailerInfoList;
 
      }
 
