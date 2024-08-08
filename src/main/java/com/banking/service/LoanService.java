@@ -1,4 +1,5 @@
 package com.banking.service;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.banking.entity.BankInfoEntity;
@@ -51,5 +52,12 @@ public class LoanService {
         LoanInfo loanInfo1 = ConvertUtils.convert(savedloaninfoentity);
         return loanInfo1;
     }
-
+    public List<LoanInfo> getLoanDetailsByBankId(Long bankId) {
+         List<LoanInfoEntity> loanlistentity = loanInfoRepository.findByBankInfoEntityId(bankId);
+         List<LoanInfo> loanlist = new ArrayList<LoanInfo>();
+         for( LoanInfoEntity lister : loanlistentity){
+             loanlist.add(ConvertUtils.convert(lister));
+         }
+    return loanlist;
+    }
 }

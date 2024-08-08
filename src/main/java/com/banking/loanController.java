@@ -27,4 +27,10 @@ public class loanController {
         LoanInfo loanInfo1 = loanService.saveLoanDetails(loanInfo);
     return ResponseEntity.ok(loanInfo1);
     }
+
+    @GetMapping("/getLoanDetails/{bankId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<LoanInfo> getLoanbyBank(@PathVariable("bankId") Long bankId) {
+        return loanService.getLoanDetailsByBankId(bankId);
+    }
 }

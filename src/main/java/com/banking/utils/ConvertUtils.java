@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ConvertUtils {
     private static final Logger logger = LoggerFactory.getLogger(ConvertUtils.class);
@@ -121,4 +123,6 @@ public static LoanInfo convert(LoanInfoEntity loanInfoEntity) {
     loanInfo.setActiveInd(loanInfoEntity.isActiveInd( ));
     return loanInfo;
 }
+
+
 }
