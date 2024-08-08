@@ -21,6 +21,7 @@ public class LoanInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+
    @Column(name="active_Ind")
     private boolean activeInd;
    @Column(name="invoice_Desc")

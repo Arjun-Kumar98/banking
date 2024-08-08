@@ -1,16 +1,20 @@
 package com.banking.utils;
 
 import com.banking.entity.CustomerInfoEntity;
+import com.banking.entity.LoanInfoEntity;
 import com.banking.entity.RetailerInfoEntity;
 import com.banking.model.BankInfo;
 import com.banking.entity.BankInfoEntity;
 
 import com.banking.model.CustomerInfo;
+import com.banking.model.LoanInfo;
 import com.banking.model.RetailerInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ConvertUtils {
     private static final Logger logger = LoggerFactory.getLogger(ConvertUtils.class);
@@ -83,5 +87,42 @@ public static RetailerInfo convert(RetailerInfoEntity retailerInfoEntity) {
     retailerInfo.setActiveInd(retailerInfoEntity.isActiveInd( ));
     return retailerInfo;
 }
+
+public static LoanInfoEntity convert(final LoanInfo loanInfo,
+                                     final BankInfoEntity bankInfoEntity,
+                                     final CustomerInfoEntity customerInfoEntity,
+                                     final RetailerInfoEntity retailerInfoEntity) {
+
+    LoanInfoEntity loanInfoEntity = new LoanInfoEntity();
+
+    loanInfoEntity.setBankInfoEntity(bankInfoEntity);
+    loanInfoEntity.setCustomerInfoEntity(customerInfoEntity);
+    loanInfoEntity.setRetailerInfoEntity(retailerInfoEntity);
+
+
+    loanInfoEntity.setUpdatedOn(loanInfo.getUpdatedOn( ));
+    loanInfoEntity.setCreatedOn(loanInfo.getCreatedOn( ));
+    loanInfoEntity.setActiveInd(loanInfo.isActiveInd( ));
+    loanInfoEntity.setInvoiceAmount(loanInfo.getInvoiceAmount( ));
+    loanInfoEntity.setInvoiceDesc(loanInfo.getInvoiceDesc( ));
+    return loanInfoEntity;
+}
+
+public static LoanInfo convert(LoanInfoEntity loanInfoEntity) {
+    LoanInfo loanInfo = new LoanInfo();
+    loanInfo.setId(loanInfoEntity.getId( ));
+//    loanInfo.setBankId(loanInfoEntity.getBankId( ));
+
+    loanInfo.setCustomerId(loanInfoEntity.getCustomerInfoEntity( ).getId());
+    loanInfo.setRetailerId(loanInfoEntity.getRetailerInfoEntity().getId());
+    loanInfo.setBankId(loanInfoEntity.getBankInfoEntity().getId());
+    loanInfo.setUpdatedOn(loanInfoEntity.getUpdatedOn( ));
+    loanInfo.setCreatedOn(loanInfoEntity.getCreatedOn( ));
+    loanInfo.setInvoiceAmount(loanInfoEntity.getInvoiceAmount( ));
+    loanInfo.setInvoiceDesc(loanInfoEntity.getInvoiceDesc( ));
+    loanInfo.setActiveInd(loanInfoEntity.isActiveInd( ));
+    return loanInfo;
+}
+
 
 }
