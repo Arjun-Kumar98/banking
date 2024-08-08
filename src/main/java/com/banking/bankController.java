@@ -36,15 +36,7 @@ public class bankController {
         return bankingService.getBankDetails();
     }
 
-  //  @GetMapping("/info")
-   // public String hello() {
-     //   return "Believe me I am working";
-   // }
-
-    //
-//    public static void main(String[] args) {
-//        SpringApplication.run(bankController.class , args);
-//    }
+ 
 
 }
 

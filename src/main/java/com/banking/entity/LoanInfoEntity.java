@@ -21,12 +21,7 @@ public class LoanInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-//   @Column(name="retailer_Id")
-//    private Long retailerId;
-//   @Column(name="customer_Id")
-//    private Long customerId;
-//   @Column(name = "bank_Id")
-//    private Long bankId;
+
    @Column(name="active_Ind")
     private boolean activeInd;
    @Column(name="invoice_Desc")

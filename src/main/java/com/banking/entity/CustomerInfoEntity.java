@@ -39,3 +39,4 @@ public class CustomerInfoEntity {
     @OneToMany(mappedBy = "customerInfoEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LoanInfoEntity> loanInfoEntityList;
 }
+
