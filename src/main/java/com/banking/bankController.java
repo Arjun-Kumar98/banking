@@ -28,8 +28,7 @@ public class bankController {
         bankingService.saveBankDetails(bankInfo);
         return ResponseEntity.ok(bankInfo);
     }
-//
-//
+
     @GetMapping("/getBankDetails")
     @CrossOrigin(origins="http://localhost:4200")
     public List<BankInfo> getBankDetails() {
