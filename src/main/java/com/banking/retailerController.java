@@ -33,7 +33,7 @@ public class retailerController {
 
     @GetMapping("/getRetailerDetails")
     @CrossOrigin(origins="http://localhost:4200")
-    public List<Map<String,Object>> getRetailerDetails() {
+    public List<RetailerInfo> getRetailerDetails() {
         return retailerService.getRetailerDetails();
 
     }

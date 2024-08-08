@@ -32,7 +32,7 @@ public class bankController {
 //
     @GetMapping("/getBankDetails")
     @CrossOrigin(origins="http://localhost:4200")
-    public List<Map<String, Object>> getBankDetails() {
+    public List<BankInfo> getBankDetails() {
         return bankingService.getBankDetails();
     }
 
