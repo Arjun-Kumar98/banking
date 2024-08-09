@@ -28,9 +28,14 @@ public class loanController {
     return ResponseEntity.ok(loanInfo1);
     }
 
-    @GetMapping("/getLoanDetails/{bankId}")
+      @GetMapping("/getLoanDetailsbyBank/{bankId}")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<LoanInfo> getLoanbyBank(@PathVariable("bankId") Long bankId) {
         return loanService.getLoanDetailsByBankId(bankId);
+    }
+    @GetMapping("/getLoanDetails/{Id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public LoanInfo getLoanDetails(@PathVariable("Id") Long Id) {
+        return loanService.getLoanDetails(Id);
     }
 }
