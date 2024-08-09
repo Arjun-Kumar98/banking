@@ -1,6 +1,7 @@
 package com.banking.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,12 +33,20 @@ public class LoanInfoEntity {
     private LocalDateTime createdOn;
  @Column(name = "updated_On")
     private LocalDateTime updatedOn;
+// @Column(name="bank_Id", insertable = false, updatable = false)
+// private Long bankId;
+// @Column(name="retailer_Id" , insertable = false, updatable = false)
+// private Long retailerId;
+// @Column(name="customer_Id" , insertable = false, updatable = false)
+// private Long customerId;
 
-@ManyToOne(cascade = CascadeType.ALL)
+
+@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 @JoinColumn(name = "bank_Id", referencedColumnName = "Id")
+@JsonManagedReference
+//private BankInfoEntity bankInfoEntity;
 private BankInfoEntity bankInfoEntity;
-
-@ManyToOne(cascade = CascadeType.ALL)
+@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 @JoinColumn(name = "retailer_Id", referencedColumnName = "Id")
 private RetailerInfoEntity retailerInfoEntity;
 
