@@ -38,15 +38,9 @@ public class LoanService {
 
     public LoanInfo saveLoanDetails(LoanInfo loanInfo) {
 
-        //Add validation logic here
         BankInfoEntity bankInfoEntity = bankInfoRepository.getById(loanInfo.getBankId( ));
         CustomerInfoEntity customerInfoEntity = customerInfoRepository.getById(loanInfo.getCustomerId());
         RetailerInfoEntity retailerInfoEntity = retailerInfoRepository.getById(loanInfo.getRetailerId( ));
-
-        //Add validation logic here
-        //  chk for bankInfoEntity is not null
-        //  chk for customerInfoEntity is not null
-        //  chk for retailerInfoEntity is not null
         LoanInfoEntity loanInfoEntity = ConvertUtils.convert(loanInfo,bankInfoEntity,customerInfoEntity,retailerInfoEntity);
         LoanInfoEntity savedloaninfoentity   =  loanInfoRepository.save(loanInfoEntity);
         LoanInfo loanInfo1 = ConvertUtils.convert(savedloaninfoentity);
