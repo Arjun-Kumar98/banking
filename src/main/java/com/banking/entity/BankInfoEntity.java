@@ -1,6 +1,7 @@
 package com.banking.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -33,6 +34,7 @@ public class BankInfoEntity {
     @Column(name="active_Ind")
     private boolean activeInd;
 
-    @OneToMany(mappedBy = "bankInfoEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "bankInfoEntity", cascade = {CascadeType.PERSIST,CascadeType.MERGE}, orphanRemoval = true)
+    @JsonIgnore
     private List<LoanInfoEntity> loanInfoEntityList;
 }
