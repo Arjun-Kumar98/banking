@@ -26,9 +26,8 @@ public class retailerController {
 
     @PostMapping("/saveRetailerDetails")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ResponseEntity saveRetailerDetails(@RequestBody RetailerInfo retailerInfo) {
-        retailerService.saveRetailerDetails(retailerInfo);
-        return ResponseEntity.ok(retailerInfo);
+    public RetailerInfo saveRetailerDetails(@RequestBody RetailerInfo retailerInfo) {
+        return retailerService.saveRetailerDetails(retailerInfo);
     }
 
     @GetMapping("/getRetailerDetails")
