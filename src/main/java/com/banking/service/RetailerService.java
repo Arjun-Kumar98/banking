@@ -22,10 +22,11 @@ public class RetailerService {
      @Autowired
     private RetailerInfoRepository retailerInfoRepository;
 
-     public ResponseEntity<RetailerInfoEntity> saveRetailerDetails( RetailerInfo retailerInfo) {
+     public RetailerInfo saveRetailerDetails( RetailerInfo retailerInfo) {
          RetailerInfoEntity saveRetailerInfoEntity = ConvertUtils.convert(retailerInfo);
          saveRetailerInfoEntity = retailerInfoRepository.save(saveRetailerInfoEntity);
-         return ResponseEntity.ok().body(saveRetailerInfoEntity);
+          RetailerInfo retailInfo = ConvertUtils.convert(saveRetailerInfoEntity);
+         return retailInfo;
      }
      public List<RetailerInfo> getRetailerDetails() {
          List<RetailerInfoEntity> retailerInfoEntityList = retailerInfoRepository.findByActiveIndIsTrue();
