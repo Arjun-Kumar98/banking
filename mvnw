@@ -16,9 +16,7 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# ----------------------------------------------------------------------------
 
-# ----------------------------------------------------------------------------
 # Apache Maven Wrapper startup batch script, version 3.3.2
 #
 # Optional ENV vars
