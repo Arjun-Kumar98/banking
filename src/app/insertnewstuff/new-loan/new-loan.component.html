@@ -1,0 +1,30 @@
+<div>
+
+<div>
+  <label>Account Id:</label>
+  <select [(ngModel)]="selectedAccountId">
+    <option *ngFor="let account of AccountList" [value]="account.id">{{account.accountId}}</option>
+  </select>
+</div>
+<div>
+  <label>Invoice Description</label>
+  <input type="text" [(ngModel)]="invoiceDesc"/>
+</div>
+  <label>Invoice Amount:</label>
+  <input type="text" [(ngModel)]="invoiceAmount"/>
+</div>
+<div>
+  <label>Select the Bank</label>
+  <select [(ngModel)]="selectedBankId">
+    <option *ngFor="let bank of BankList" [value]="bank.id">{{bank.bankName}}</option>
+  </select>
+</div>
+<div>
+  <label>Select the retailer</label>
+  <select [(ngModel)]="selectedRetailerId">
+    <option *ngFor="let ret of RetailerList" [value]="ret.id">{{ret.retailerName}}</option>
+  </select>
+</div>
+<div>
+  <button (click)="submit()">Submit</button>
+</div>

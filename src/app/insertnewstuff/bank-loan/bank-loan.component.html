@@ -1,0 +1,35 @@
+<div class="body">
+  <div class="container">
+
+  <div>
+    <label>Select the Bank</label>
+    <select [(ngModel)]="selectedBankId">
+      <option *ngFor="let bank of BankList" [value]="bank.id">{{bank.bankName}}</option>
+    </select>
+    <button (click)="viewloans()">View Loan</button>
+  </div>
+  <div *ngIf="viewloan">
+      <label>Here are the loans associated with the bank</label>
+     <table>
+<tr>
+       <th>S.no</th>
+       <th>customer Id</th>
+       <th>retailer Id</th>
+       <th>Bank Id</th>
+       <th>Invoice Amount</th>
+       <th>Invoice Desc</th>
+</tr>
+       <tr *ngFor = "let loan of LoanList,let i = index">
+         <td>{{i+1}}</td>
+         <td>{{loan.customerId}}</td>
+         <td>{{loan.retailerId}}</td>
+         <td>{{loan.bankId}}</td>
+         <td>{{loan.invoiceAmount}}</td>
+         <td>{{loan.invoiceDesc}}</td>
+         <td (click)="edit(loan.id)"><i class="fas fa-edit"></i></td>
+
+       </tr>
+     </table>
+    </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Distributes space between the boxes */
+}
+
+.box {
+  width: 30%; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: lightblue;
+  text-align: center;
+  margin: 10px;
+}

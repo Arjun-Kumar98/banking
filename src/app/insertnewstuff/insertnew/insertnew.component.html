@@ -1,0 +1,40 @@
+<div class="body">
+
+  <div class="container" *ngIf="initially" >
+  <div class="box" style="text-align: center" (click)="showcustomer()">
+      <label>Customer</label>
+      </div>
+      <div class = "box" style="text-align: center; border-color: black" (click)="showbank()">
+        <label>Bank</label>
+     </div>
+      <div class = "box" style="text-align: center" (click)="showretailer()">
+        <label>Retailer</label>
+      </div>
+    </div>
+</div>
+<div class ="body">
+  <div class="form" *ngIf="customerscreen&&!initially">
+    <label>Customer Name:</label>
+    <input type="text" [(ngModel)]="customerInfo.customerName">
+    <label>Account Id:</label>
+    <input type="text" [(ngModel)]="customerInfo.accountId">
+    <button type="submit" (click)="submitdetails(1)">Submit</button>
+    <button type="reset" (click)="goback()">Menu</button>
+  </div>
+  <div class = "form" *ngIf="banking&&!initially">
+    <label>Bank Name</label>
+    <input type="text" [(ngModel)]="bankInfo.bankName">
+    <label>IFSC code</label>
+    <input type="text" [(ngModel)]="bankInfo.ifscCode">
+    <button type="submit" (click)="submitdetails(2)">Submit</button>
+    <button type="reset" (click)="goback()">Menu</button>
+  </div>
+  <div class = "form" *ngIf="retailing&&!initially">
+    <label>Retailer Name</label>
+    <input type="text" [(ngModel)]="retailerInfo.retailerName">
+    <label>Account Id</label>
+    <input type="text" [(ngModel)]="retailerInfo.accountId">
+    <button type="submit" (click)="submitdetails(3)">Submit</button>
+    <button type="reset" (click)="goback()">Menu</button>
+  </div>
+</div>
