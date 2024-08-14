@@ -26,7 +26,7 @@ describe('InsertnewComponent', () => {
     component.customerInfo.accountId = "CUST123";
     component.customerInfo.customerName = "Jack Dawson";
     component.customerInfo.createdOn = new Date('2024-01-01');
-    component.customerInfo.updatedOn = new Date('2024-04-01');
+    component.customerInfo.updatedOn = new Date('2024-04-02');
     component.customerInfo.activeInd = true;
 
     component.bankInfo = new BankInfo();
