@@ -43,7 +43,6 @@ public class loanController {
     @PutMapping("/updateLoanDetails/{Id}")
     @CrossOrigin(origins = "http://localhost:4200")
     public LoanInfo updateLoanDetails(@PathVariable Long Id, @RequestBody LoanInfo loanInfo) {
-      //  logger.info("the loan info is == {}"+loanInfo.toString());
         return loanService.updateLoanDetails(Id,loanInfo);
     }
 }
