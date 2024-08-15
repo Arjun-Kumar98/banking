@@ -16,15 +16,13 @@ describe('InsertnewComponent', () => {
       imports: [InsertnewstuffModule],
       providers:[{provide:ApiService,useValue:apiServiceSpy}]
     }).compileComponents();
-
-
     fixture = TestBed.createComponent(InsertnewComponent);
     component = fixture.componentInstance;
     apiService = TestBed.inject(ApiService) as jasmine.SpyObj<ApiService>;
 
     component.customerInfo = new CustomerInfo();
     component.customerInfo.accountId = "CUST123";
-    component.customerInfo.customerName = "Jack Dawson";
+    component.customerInfo.customerName = "Jack Daniel";
     component.customerInfo.createdOn = new Date('2024-01-01');
     component.customerInfo.updatedOn = new Date('2024-04-02');
     component.customerInfo.activeInd = true;
