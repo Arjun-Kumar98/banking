@@ -29,7 +29,7 @@ describe('InsertnewComponent', () => {
 
     component.bankInfo = new BankInfo();
     component.bankInfo.bankName="SBI";
-    component.bankInfo.ifscCode="SB10101";
+    component.bankInfo.ifscCode="SB12101";
     component.bankInfo.createdOn= new Date("2024-02-01");
     component.bankInfo.updatedOn = new Date("2024-04-03");
     component.bankInfo.activeInd= true;
@@ -44,7 +44,7 @@ describe('InsertnewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should call resgistercustomer when datas is 1',()=>{
+  it('should call registercustomer when datas is 1',()=>{
     apiService.registercustomer.and.returnValue(of({}));
     component.submitdetails(1);
     expect(apiService.registercustomer).toHaveBeenCalledWith(component.customerInfo)
