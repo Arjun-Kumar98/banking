@@ -31,16 +31,6 @@ ngOnInit(){
     if(params['id']!=undefined){
       this.checkId = params['id'];
       this.apiService.getLoanDetails(this.checkId).subscribe(res=>{
-
-        // "customerId": 2,
-        //   "bankId": 1,
-        //   "retailerId": 1,
-        //   "createdOn": "2024-08-07T00:08:45",
-        //   "updatedOn": "2024-08-07T00:08:45",
-        //   "activeInd": true,
-        //   "invoiceDesc": "New Bike",
-        //   "invoiceAmount": 12000.0,
-        //   "id": 2
         this.invoiceDesc = res.invoiceDesc;
         this.invoiceAmount = res.invoiceAmount;
         this.selectedBankId = res.bankId;
