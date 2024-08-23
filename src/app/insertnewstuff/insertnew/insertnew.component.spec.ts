@@ -22,7 +22,7 @@ describe('InsertnewComponent', () => {
 
     component.customerInfo = new CustomerInfo();
     component.customerInfo.accountId = "CUST456";
-    component.customerInfo.customerName = "Jack Daniel";
+    component.customerInfo.customerName = "Rick Scot";
     component.customerInfo.createdOn = new Date('2024-01-01');
     component.customerInfo.updatedOn = new Date('2024-04-02');
     component.customerInfo.activeInd = true;
