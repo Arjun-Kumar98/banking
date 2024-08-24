@@ -36,7 +36,7 @@ describe('InsertnewComponent', () => {
 
     component.retailerInfo = new RetailerInfo();
     component.retailerInfo.retailerName= "Hot buns";
-    component.retailerInfo.accountId="143564";
+    component.retailerInfo.accountId="143521;
     component.retailerInfo.createdOn = new Date("2024-01-05");
     component.retailerInfo.updatedOn = new Date("2024-03-03");
     component.retailerInfo.activeInd = true;
