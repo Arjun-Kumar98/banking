@@ -33,6 +33,7 @@ goback(){
      this.retailing=false;
      this.banking=false;
 }
+  //api is called here
       submitdetails(datas:any){
       if(datas==1){
         this.apiService.registercustomer(this.customerInfo).subscribe(res=>{
