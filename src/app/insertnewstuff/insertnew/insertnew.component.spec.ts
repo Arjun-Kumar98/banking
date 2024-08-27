@@ -30,7 +30,7 @@ describe('InsertnewComponent', () => {
     component.bankInfo = new BankInfo();
     component.bankInfo.bankName="SBI";
     component.bankInfo.ifscCode="SB12101";
-    component.bankInfo.createdOn= new Date("2024-02-01");
+    component.bankInfo.createdOn= new Date("2024-03-01");
     component.bankInfo.updatedOn = new Date("2024-05-03");
     component.bankInfo.activeInd= true;
 
