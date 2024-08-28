@@ -21,7 +21,7 @@ describe('InsertnewComponent', () => {
     apiService = TestBed.inject(ApiService) as jasmine.SpyObj<ApiService>;
 
     component.customerInfo = new CustomerInfo();
-    component.customerInfo.accountId = "CUST456";
+    component.customerInfo.accountId = "CUST457";
     component.customerInfo.customerName = "Rick Scot";
     component.customerInfo.createdOn = new Date('2024-01-01');
     component.customerInfo.updatedOn = new Date('2024-04-02');
