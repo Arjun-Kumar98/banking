@@ -34,7 +34,7 @@ describe('NewLoanComponent', () => {
       component.selectedBankId=1,
       component.selectedAccountId=1;
       component.invoiceAmount=10000;
-      component.invoiceDesc =" new Suitcase";
+      component.invoiceDesc ="new Suitcase";
       component.selectedRetailerId =1;
     fixture.detectChanges();
   });
