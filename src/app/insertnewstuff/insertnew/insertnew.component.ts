@@ -40,9 +40,9 @@ goback(){
 
         });
       }else if(datas==2){
-        this.apiService.registerbanker(this.bankInfo).subscribe(res=>{});
-      }else{
         this.apiService.registerretailer(this.retailerInfo).subscribe(res=>{});
+      }else{
+      this.apiService.registerbanker(this.bankInfo).subscribe(res=>{});
       }
       }
 
