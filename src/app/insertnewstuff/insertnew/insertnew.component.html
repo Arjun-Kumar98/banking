@@ -26,7 +26,7 @@
     <input type="text" [(ngModel)]="bankInfo.bankName">
     <label>IFSC code</label>
     <input type="text" [(ngModel)]="bankInfo.ifscCode">
-    <button type="submit" (click)="submitdetails(2)">Submit</button>
+    <button type="submit" (click)="submitdetails(3)">Submit</button>
     <button type="reset" (click)="goback()">Menu</button>
   </div>
   <div class = "form" *ngIf="retailing&&!initially">
@@ -34,7 +34,7 @@
     <input type="text" [(ngModel)]="retailerInfo.retailerName">
     <label>Account Id</label>
     <input type="text" [(ngModel)]="retailerInfo.accountId">
-    <button type="submit" (click)="submitdetails(3)">Submit</button>
+    <button type="submit" (click)="submitdetails(2)">Submit</button>
     <button type="reset" (click)="goback()">Menu</button>
   </div>
 </div>
