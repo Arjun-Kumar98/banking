@@ -33,7 +33,7 @@ describe('NewLoanComponent', () => {
     apiService = TestBed.inject(ApiService) as jasmine.SpyObj<ApiService>;
       component.selectedBankId=1,
       component.selectedAccountId=1;
-      component.invoiceAmount=11201;
+      component.invoiceAmount=11202;
       component.invoiceDesc ="new Briefcase";
       component.selectedRetailerId =1;
     fixture.detectChanges();
