@@ -48,8 +48,8 @@ describe('NewLoanComponent', () => {
       "createdOn":new Date(),
       "updatedOn":new Date(),
       "customerId":component.selectedAccountId,
+       "invoiceDesc":component.invoiceDesc,
       "invoiceAmount":component.invoiceAmount,
-      "invoiceDesc":component.invoiceDesc,
       "retailerId":component.selectedRetailerId
     }
 
